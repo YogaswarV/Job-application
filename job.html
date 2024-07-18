@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+    <script>
+        function validateApplication() {
+            // Get the value of the experience input
+            const experience = document.getElementById('experience').value;
+
+            // Check if the experience meets the requirement
+            if (experience < 3) {
+                alert('You must have at least 3 years of experience to apply for this job.');
+                return false; // Prevent form submission
+            }
+            return true; // Allow form submission
+        }
+    </script>
+</head>
+<body>
+    <h1>Job Application Form</h1>
+    <form onsubmit="return validateApplication()">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="experience">Years of Experience:</label><br>
+        <input type="number" id="experience" name="experience" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
